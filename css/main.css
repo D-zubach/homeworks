@@ -1,0 +1,128 @@
+@keyframes scaleTitle {}
+@keyframes moveCircle {
+  0% {
+    transform: scale(1);
+    left: 0;
+  }
+  25% {
+    transform: scale(1.2);
+    left: 80px;
+    top: 50px;
+  }
+  50% {
+    transform: scale(1.4);
+    left: 160px;
+    top: 100px;
+  }
+  75% {
+    transform: scale(1.2);
+    left: 80px;
+    top: 50px;
+  }
+  100% {
+    transform: scale(1);
+    left: 0;
+  }
+}
+@keyframes moveLeftBall {
+  0%, 50% {
+    transform: rotate(0) translateX(0);
+  }
+  100% {
+    transform: rotate(30deg) translateX(-35px);
+  }
+}
+@keyframes btn-shine {
+  from {
+    transform: translateX(0) skewX(-20deg);
+  }
+  to {
+    transform: translateX(420%) skewX(-20deg);
+  }
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+.btn {
+  margin: 40px 0;
+}
+
+.btn_shine {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(140deg, #2d927e, #166d63);
+  color: #f7f2f7;
+  box-shadow: 0 7px 18px #5a345a;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn_shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -55%;
+  width: 40%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  transform: translateX(0) skewX(-20deg);
+}
+.btn_shine:hover::after {
+  animation: btn-shine 0.75s ease-in-out forwards;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.swing {
+  display: flex;
+}
+.swing__item {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(#2b5e82, #f7f7f7);
+  box-shadow: 0 0 3px 1px #9a929a;
+}
+.swing__item_left {
+  animation: moveLeftBall 0.9s ease-in-out infinite alternate;
+}
+
+.shadow {
+  display: flex;
+  padding-top: 24px;
+}
+.shadow__item {
+  width: 35px;
+  height: 0.55em;
+  border-radius: 50%;
+  background: linear-gradient(rgba(43, 94, 130, 0.7), rgba(247, 247, 247, 0.63));
+  filter: blur(2.2px);
+}/*# sourceMappingURL=main.css.map */
